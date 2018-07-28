@@ -17,12 +17,12 @@ def main():
         # 'content-type':'application/json',
     })
     stok = response.json()['stok']
-    print(response.json())
+    # print(response.json())
     ret = '{}<br>'.format(response.json())
 
     url = 'http://124.16.85.115/stok=%s/ds'%stok
     response = sess.post(url, data=json.dumps({"system":{"reboot":'null'},"method":"do"}))
-    print(response.text)
+    # print(response.text)
     return ret + response.text
 
 if __name__ == '__main__':
